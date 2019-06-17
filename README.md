@@ -26,7 +26,7 @@ In addition an Alpine container with MQTT broker (Mosquitto) was present on both
 
 The inference time per benchmarking script is 0.082 seconds. When run in the context of the detect application, speeds around 0.1s, up to 0.15s per frame are observed for inference. This equates to a 8-12 fps range. However, it was observed that time is wasted creating the diagnostic plot (0.1s) and then more saving it to file (0.3s), giving a total frame rate of about 2fps. However - in a production system these are unnecessary and could be disabled if a greater framerate was desired. The rest of the processing is fairly quick, making 8fps, including publishing a reasonable proposition.
 
-`1560701945.6638048  Capture image
+```1560701945.6638048  Capture image
 Cap Ret True
 1560701945.6684606  Run Prediction
 1560701945.7848501  Create plot and upload
@@ -35,7 +35,7 @@ Cap Ret True
 1560701945.8928337  Face complete
 1560701945.8938186  Face checking complete
 1560701946.2034209  Save complete
-1  faces detected.`
+1  faces detected.```
 
 - Which is a better quality detector: the OpenCV or yours?
 
