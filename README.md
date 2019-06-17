@@ -8,7 +8,9 @@ http://s3.au-syd.cloud-object-storage.appdomain.cloud/hw7draget
 
 Facial SSD NN scripts:
 
-- detect.py - Run in Ubuntu container on TX2, with CUDA support and Tensorflow.
+- detect7.py - Run in Ubuntu container on TX2, with CUDA support and Tensorflow. Captures images and uses TensorFlow to detector faces and return bounding boxes. A diagnostic plot is saved locally, whilst each individual face crop is pushed to the MQTT broker for sending to the cloud.
+- benchmark7.py - A script for benchmarking the framerate performance of the TensorFlow detector using a single image and the TensorRT optimised network.
+- prepare_model.py - A script which takes the publically available frozen model, applies the TensorRT optimisation and then saves back to file.
 
 
 Scripts per HW3 - see https://github.com/draget/w251_hw3
@@ -20,7 +22,11 @@ In addition an Alpine container with MQTT broker (Mosquitto) was present on both
 
 - Describe your solution in detail. What neural network did you use? What dataset was it trained on? What accuracy does it achieve?
 
+
+
 - Does it achieve reasonable accuracy in your empirical tests? Would you use this solution to develop a robust, production-grade system?
+
+Yes - the accuracy is very good, with no false detections. It can detect faces side on as well as front but doesn't deal quite as well with blurring in low light as the simple OpenCV detector.
 
 - What framerate does this method achieve on the Jetson? Where is the bottleneck?
 
@@ -41,5 +47,8 @@ Cap Ret True
 
 - Which is a better quality detector: the OpenCV or yours?
 
+The Mobilenet-SSD based detector is vastly superior in terms of accuracy. In empirical testing I note significantly less false detections and better quality bounding box definition. Comparative testing results available online show that the accuracy is better than twice as good.
+
+Reference: https://medium.com/nodeflux/performance-showdown-of-publicly-available-face-detection-model-7c725747094a
 
 
