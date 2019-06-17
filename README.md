@@ -22,7 +22,7 @@ In addition an Alpine container with MQTT broker (Mosquitto) was present on both
 
 - Describe your solution in detail. What neural network did you use? What dataset was it trained on? What accuracy does it achieve?
 
-I used a Mobilenet-SSD neural network, which is a single-shot multibox detector optimised for devices with less compute power available. The Mobilenet architecture is originally developed by Google to augment their heavier Inception model. This example was trained on the WIDERFACE dataset which is available here: http://shuoyang1213.me/WIDERFACE. The accuracy measured as mean averaged precision (see reference below) is close to 80%.
+I used a pre-trained Mobilenet-SSD neural network, available from https://github.com/yeephycho/tensorflow-face-detection, which is a single-shot multibox detector optimised for devices with less compute power available. The Mobilenet architecture is originally developed by Google to augment their heavier Inception model. This example was trained on the WIDERFACE dataset which is available here: http://shuoyang1213.me/WIDERFACE. The accuracy measured as mean averaged precision (see reference below) is close to 80%.
 
 - Does it achieve reasonable accuracy in your empirical tests? Would you use this solution to develop a robust, production-grade system?
 
