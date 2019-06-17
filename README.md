@@ -35,7 +35,8 @@ Cap Ret True
 1560701945.8928337  Face complete
 1560701945.8938186  Face checking complete
 1560701946.2034209  Save complete
-1  faces detected.```
+1  faces detected.
+```
 
 - Which is a better quality detector: the OpenCV or yours?
 
